@@ -16,7 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   // tempprary varable
   bool isMale = true;
 
+  // variables
   double height = 100.09;
+  int weight = 50;
+  int age = 50;
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(fontSize: 34, color: Colors.white),
                           ),
                           Text(
-                            "50",
+                            "${weight}",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 70,
@@ -172,7 +175,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
                                 child: Icon(Icons.remove),
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -180,7 +187,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
                                 child: Icon(Icons.add),
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -203,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(fontSize: 34, color: Colors.white),
                           ),
                           Text(
-                            "50",
+                            "${age}",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 70,
@@ -213,7 +224,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    age--;
+                                  });
+                                },
                                 child: Icon(Icons.remove),
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -221,7 +236,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                                },
                                 child: Icon(Icons.add),
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
