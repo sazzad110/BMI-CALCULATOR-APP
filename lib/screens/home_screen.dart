@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ResultScreen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -262,7 +264,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 double w = weight;
                 double heightsq = h * h;
                 double result = w / heightsq;
-                print("Your BMI is: $result");
+                //print("Your BMI is: $result");
+
+                // show overweight ( outcome ) in another page
+                var outcome = "";
+                if (result >= 25) {
+                  outcome = "Over Weight";
+                } else if (result >= 18) {
+                  outcome = "Normal";
+                } else {
+                  outcome = "Under Weight";
+                }
+                print("$outcome");
+
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ResultScreen(outcome)));
               },
               color: Colors.red,
               height: 50,
