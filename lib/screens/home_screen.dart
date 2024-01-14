@@ -17,8 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isMale = true;
 
   // variables
-  double height = 100.09;
-  int weight = 50;
+  double height = 100;
+  double weight = 50;
   int age = 50;
 
   @override
@@ -257,7 +257,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                double h = height / 100;
+                double w = weight;
+                double heightsq = h * h;
+                double result = w / heightsq;
+                print("Your BMI is: $result");
+              },
               color: Colors.red,
               height: 50,
               minWidth: double.infinity,
