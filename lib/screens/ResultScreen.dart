@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatefulWidget {
-  final dynamic data;
+  final dynamic data; // dynamic mean that can hold value of any type
   ResultScreen(this.data);
   @override
   State<ResultScreen> createState() => _ResultScreenState();

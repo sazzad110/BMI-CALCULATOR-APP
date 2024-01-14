@@ -275,8 +275,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 } else {
                   outcome = "Under Weight";
                 }
-                print("$outcome");
-
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ResultScreen(outcome)));
               },
