@@ -16,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   // tempprary varable
   bool isMale = true;
 
+  double height = 100.09;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,11 +104,50 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Expanded(
-              flex: 2, // etao double hobe
-              child: Container(
-                color: Colors.green,
-              ),
-            ),
+                flex: 2, // etao double hobe
+                child: Card(
+                  color: cardColor,
+                  child: Column(
+                    children: [
+                      Text(
+                        "HEIGHT",
+                        style: TextStyle(fontSize: 28, color: Colors.white),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment:
+                            CrossAxisAlignment.baseline, // CM subscript
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Text(
+                            "${height.toStringAsFixed(0)}",
+                            style: TextStyle(fontSize: 28, color: Colors.white),
+                          ),
+                          Text(
+                            "CM",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Slider(
+                        inactiveColor: Colors.blueAccent,
+                        activeColor: Colors.red,
+                        thumbColor: Colors.amber,
+                        min: 70,
+                        max: 210,
+                        value: height,
+                        onChanged: (val) {
+                          setState(() {
+                            height = val;
+                          });
+                        },
+                      )
+                    ],
+                  ),
+                )),
             Expanded(
               flex: 2, // etao double hobe
               child: Row(
